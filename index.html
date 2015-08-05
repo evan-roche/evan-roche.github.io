@@ -2,92 +2,15 @@
 <html>
 <head>
 	<meta charset="UTF-8" />
-	<title>Gallery</title>
+	<title>Evan Roche Artwork</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-
-	<script>
-	$(window).load(function() {
-
-	  $('#gallery img').each(function() {
-
-	    createCanvas(this);
-	  });
-
-	  function createCanvas(image) {
-
-	    var canvas = document.createElement('canvas');
-	    if (canvas.getContext) {
-	      var ctx = canvas.getContext("2d");
-	      canvas.width = image.width;
-	      canvas.height = image.height;
-	      ctx.drawImage(image, 0, 0);
-	      var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height),
-	          pixelData = imageData.data;
-
-	      for (var y = 0; y < canvas.height; y++) {
-	        for (var x = 0; x < canvas.width; x++) {
-
-	          var i = (y * 4 * canvas.width) + (x * 4);
-
-	          var red = pixelData[i];
-	          var green = pixelData[i + 1];
-	          var blue = pixelData[i + 2];
-   
-	          var grayScale = (red * 0.3) + (green * 0.59) + (blue * .11);
-
-	          pixelData[i] = grayScale;
-	          pixelData[i + 1] = grayScale;
-	          pixelData[i + 2] = grayScale;
-	        }
-	      }
-
-	      ctx.putImageData(imageData, 0, 0, 0, 0, imageData.width, imageData.height);
-
-	      image.parentNode.insertBefore(canvas, image);
-	    }
-	  }
-	});
-
-
-</script>
-<style>
-html, body, div, span, 
-h1, h2, h3, h4, h5, h6, p, 
-a, img,  ol, ul, li
-{margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%; vertical-align: baseline; background: transparent;}
-body {line-height: 1;}
-ol, ul {list-style: none;}
-:focus {outline: 0;}
-a {text-decoration:none;}
-
-body {background:  #f6f6f6 ;font-family:BebasNeueRegular;padding-top:40px;color:#393939;}
-#wrap {width: 1020px; margin: 0 auto;} 
-h1 {font-size:3em;margin-left:20px;margin-bottom:20px; text-shadow:0 1px 0 #fff;}
-li {float:left; position:relative; display:inline-block; width:300px; overflow: hidden;height:300px;margin:10px; padding:10px; background:#fff; -webkit-box-shadow:0 0 5px rgba(0,0,0,.35);
-	-moz-boz-shadow: 0 0 5px rgba(0,0,0,.35);box-shadow:0 0 5px rgba(0,0,0,.35);}
-li div {position:absolute;height:0; width:280px;background:rgba(0,0,0,.45); overflow:hidden;bottom:10px;left:10px; padding: 0 10px;-webkit-transition:height 1s;-moz-transition:height 1s;-o-transition:height 1s;-ms-transition:height 1s; transition:height 1s;color:#fff;line-height:50px;font-size:1.2em;}
-li img {
-    position:absolute;
-    left: -100%;
-    right: -100%;
-    top: -100%;
-    bottom: -100%;
-    margin: auto; 
-    min-height: 100%;
-    min-width: 100%;
-}
-li:hover div {height:50px;}
-canvas {opacity:1; position:absolute; top:10px; left:10px; -webkit-transition:opacity 1s .2s;-moz-transition:opacity 1s .2s;-o-transition:opacity 1s .2s;-ms-transition:opacity 1s .2s;transition:opacity 1s .2s;}
-li:hover canvas {opacity:0;}
-p {clear:left; float:right; margin-top:10px;margin-right:20px;}
-p a {color:#909090;-webkit-transition:color .6s;-moz-transition:color .6s;-o-transition:color .6s;-ms-transition:color .6s;transition:color .6s;}
-p a:hover {color:#eb5cf4;}
-</style>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script type="text/javascript" src="galley.js"></script>
 </head>
 
 <body>
 	<div id="wrap">
-		<h1>Artwork</h1>
+		<h1>Evan</h1>
 		<ul id="gallery">
 			<li><a href="https://s3.amazonaws.com/evanroche/pictures/citysleep.JPG"><img  width="300"  src="https://s3.amazonaws.com/evanroche/thumbs2/citysleep.JPG"><div>City Sleep</div></a></li>
 			<li><a href="https://s3.amazonaws.com/evanroche/pictures/face2.JPG"><img  width="300"  src="https://s3.amazonaws.com/evanroche/thumbs2/face2.JPG"><div>Cloudy Day</div></a></li>
@@ -98,13 +21,9 @@ p a:hover {color:#eb5cf4;}
 			<li><a href="https://s3.amazonaws.com/evanroche/pictures/brush.JPG"><img  width="300"  src="https://s3.amazonaws.com/evanroche/thumbs2/brush.JPG"><div>Rising Cliffs</div></a></li>
 			<li><a href="https://s3.amazonaws.com/evanroche/pictures/quitenight.JPG"><img  height="300"  src="https://s3.amazonaws.com/evanroche/thumbs2/quitenight.JPG"><div>Quiet Night</div></a></li>
 			<li><a href="https://s3.amazonaws.com/evanroche/pictures/lallorona.JPG"><img  width="300"  src="https://s3.amazonaws.com/evanroche/thumbs2/lallorona.JPG"><div>La Llorona</div></a></li>
-
-			
-
-			
-
 		</ul>
-		<p>Artwork by <a href="http://eproche.github.io">Evan Roche</a></p>
+		<p><a href="index.html">Evan</a></p>
+		<p><a href="david.html">David</a></p>
 	</div>
 </body>
 </html>
